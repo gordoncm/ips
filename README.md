@@ -1,8 +1,8 @@
 ```mermaid
 flowchart TB;
-    A[start]-->|went left|B[left];
-    A-->C[right];
-    B-->D[end];
-    C-->D;
-    C-->E[cotinue];
+A((Start))--A to B--->B;
+A-->C;
+B-->D;
+C-->D;
+D--Back to the start--->A;
 ```
