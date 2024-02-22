@@ -1,3 +1,16 @@
-# **Title**: Assignment 3
-## **Name**: Truman Hoy
-## **Description**: Working with markdown
+classDiagram
+    class Author {
+        <<Entity>>
+        + int ID
+    }
+
+    class Book {
+        <<Entity>>
+        + int ID
+    }
+
+    class AuthorBookRelation {
+        <<Association>>
+        + int AuthorID
+        + int BookID
+    }
