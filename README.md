@@ -1,16 +1,27 @@
+```mermaid
 classDiagram
     class Author {
-        <<Entity>>
-        + int ID
+        [Table("author")]
+        + int AuthorID
+        + string FirstName
+        + string LastName
     }
 
     class Book {
-        <<Entity>>
-        + int ID
+        [Table("book")]
+        + int BookID
+        + int AuthorID
+        + int GenreID
+        + string Title
+        + string ISBN
     }
 
-    class AuthorBookRelation {
-        <<Association>>
-        + int AuthorID
-        + int BookID
+    class Genres {
+        [Table("genre")]
+        +int GenreID
+        +string Genre
     }
+
+    Book -- Author : AuthorID
+    Book -- Genres : GenreID
+```
