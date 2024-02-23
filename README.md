@@ -1,27 +1,25 @@
 ```mermaid
 classDiagram
-    class Author {
-        [Table("author")]
-        + int AuthorID
-        + string FirstName
-        + string LastName
+    class Author{
+        *+String AuthorId*
+        +String FirstName
+        +String LastName
+        *+List~Book~ Books*
     }
-
-    class Book {
-        [Table("book")]
-        + int BookID
-        + int AuthorID
-        + int GenreID
-        + string Title
-        + string ISBN
+    class Book{
+        +Int BookId
+        +String ISBN
+        +String Title
+        *+Int AuthorId*
+        *+Int GenreId*
+        *+Author Author*
+        *+Genre Genre*
     }
-
-    class Genres {
-        [Table("genre")]
-        +int GenreID
-        +string Genre
+    Author --|> Book
+    class Genre{
+        *+Int GenreId*
+        +String Name
     }
-
-    Book -- Author : AuthorID
-    Book -- Genres : GenreID
+    Book --|> Genre
+    
 ```
